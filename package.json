@@ -1,12 +1,27 @@
 {
   "name": "lib-graphql-store",
   "version": "1.0.0",
+  "description": "Une bibliothèque légère pour gérer un contexte local asynchrone dans des projets GraphQL.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aidalinfo/lib-graphql-store.git"
+  },
+  "keywords": [
+    "graphql",
+    "async-local-storage",
+    "context-management",
+    "nodejs",
+    "library"
+  ],
+  "author": "Aidalinfo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aidalinfo/lib-graphql-store/issues"
+  },
+  "homepage": "https://github.com/aidalinfo/lib-graphql-store#readme"
 }
