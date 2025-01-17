@@ -130,11 +130,11 @@ Assure qu'un contexte asynchrone est présent pour stocker les données.
 
 ---
 
-## 🌟 Contribuer
+<!-- ## 🌟 Contribuer
 
 Les contributions sont les bienvenues ! Si vous trouvez un bug ou souhaitez ajouter une fonctionnalité, n'hésitez pas à soumettre une issue ou une pull request.
 
----
+--- -->
 
 <!-- ## 📝 Licence
 
