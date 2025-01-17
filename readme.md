@@ -30,10 +30,10 @@ npm install git@github.com:aidalinfo/lib-graphql-store.git
 Importez et utilisez la bibliothèque dans votre projet. Voici un exemple basique :
 
 ```javascript
-import Store from 'lib-graphql-store';
+import store from 'lib-graphql-store';
 
 // Définir une valeur dans le contexte
-Store.set('userId', 123);
+store.set('userId', 123);
 
 // Récupérer une valeur depuis le contexte
 const userId = Store.get('userId');
@@ -48,7 +48,7 @@ Ajoutez `lib-graphql-store` à votre serveur GraphQL pour gérer les données da
 
 ```javascript
 import { ApolloServer, gql } from 'apollo-server';
-import Store from 'lib-graphql-store';
+import store from 'lib-graphql-store';
 
 // Exemple de schéma GraphQL
 const typeDefs = gql\`
@@ -62,7 +62,7 @@ const resolvers = {
   Query: {
     user: () => {
       // Récupérer l'utilisateur stocké dans le contexte
-      const userId = Store.get('userId');
+      const userId = store.get('userId');
       return \`Utilisateur avec l'ID \${userId}\`;
     },
   },
@@ -71,8 +71,8 @@ const resolvers = {
 // Middleware pour initialiser le contexte de chaque requête
 const context = ({ req }) => {
   // Créer un contexte local pour chaque requête
-  Store.ensureContext();
-  Store.set('userId', req.headers['user-id'] || 'inconnu');
+  store.ensureContext();
+  store.set('userId', req.headers['user-id'] || 'inconnu');
   return {};
 };
 
@@ -116,15 +116,15 @@ La réponse sera :
 
 ## 📦 Méthodes de la librairie
 
-### `Store.set(key: string, value: any): void`
+### `store.set(key: string, value: any): void`
 
 Définit une valeur associée à une clé dans le contexte asynchrone.
 
-### `Store.get(key?: string): any`
+### `store.get(key?: string): any`
 
 Récupère une valeur associée à une clé ou retourne tout le contexte si aucune clé n'est fournie.
 
-### `Store.ensureContext(): void`
+### `store.ensureContext(): void`
 
 Assure qu'un contexte asynchrone est présent pour stocker les données.
 
